@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Chrome Web Store data-use and permission disclosures for Post-Purchase Guardian." />
+    <title>Chrome Web Store Data Use · Post-Purchase Guardian</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #202a24; background: #f5f7f5; }
+      body { margin: 0; padding: 36px 18px; }
+      main { max-width: 800px; margin: 0 auto; padding: 36px clamp(22px, 5vw, 54px); background: white; border: 1px solid #dfe6e1; border-radius: 16px; }
+      h1 { margin: 0 0 8px; font-size: clamp(27px, 5vw, 36px); letter-spacing: -.035em; }
+      h2 { margin: 28px 0 8px; font-size: 19px; }
+      p, li { color: #46534b; font-size: 14px; line-height: 1.7; }
+      ul { padding-left: 22px; }
+      a { color: #176b45; }
+      .updated { margin: 0 0 22px; color: #68776d; font-size: 12px; }
+      table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      th, td { padding: 10px; border: 1px solid #dfe6e1; text-align: left; vertical-align: top; }
+      th { background: #f5f8f5; }
+      footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid #e7ece8; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Chrome Web Store Data Use</h1>
+      <p class="updated">Post-Purchase Guardian · Last updated November 11, 2026</p>
+
+      <h2>Single purpose</h2>
+      <p>Track Amazon.com order items and return deadlines locally so users can manage returns and receive optional reminders.</p>
+
+      <h2>Prominent disclosure</h2>
+      <p>Post-Purchase Guardian reads supported Amazon.com order-page content only when you choose <strong>Scan Amazon</strong>. It stores order and product details, displayed or user-confirmed return deadlines, statuses, and reminder settings in Chrome local storage in your browser profile. It does not upload order records to the developer, use analytics or advertising trackers, or access Amazon cookies or credentials. If you choose <strong>Add to Google Calendar</strong>, the extension opens a prefilled Google Calendar link containing the product name, Amazon order date, return deadline, and Amazon order URL. Product images may be requested directly from Amazon's image servers when displayed. You can remove stored records with <strong>Clear all data</strong> in Settings.</p>
+
+      <h2>Data handled and purpose</h2>
+      <ul>
+        <li><strong>Amazon order-page content:</strong> order IDs, dates and links; product names, links, images, seller and quantity when shown; and explicit return-deadline text. Read only to scan the supported page and maintain the return list.</li>
+        <li><strong>User-provided information:</strong> edited deadlines, product statuses, and reminder preferences. Used to manage local records and schedule reminders.</li>
+        <li><strong>Reminder state:</strong> scheduled reminder date, delivery timestamp, and an idempotency key. Used to avoid duplicate notifications and restore reminder scheduling.</li>
+      </ul>
+
+      <h2>Collection, sharing, and retention</h2>
+      <p>Records stay in Chrome local extension storage in the user's browser profile. There is no developer-operated account, cloud sync, analytics, advertising, data sale, or server upload. Records remain until the user clears extension data or removes the extension or browser profile.</p>
+      <p>When the user opens an order, the browser visits Amazon. Product images may be fetched from Amazon image servers. Only when the user requests a Calendar link, the prefilled link sends the product name, order date, return deadline, and Amazon order URL to Google Calendar. Chrome or the operating system may show product names and deadlines in notifications when enabled. The extension does not read Amazon cookies, passwords, or credentials, call Amazon order APIs, submit returns, or save calendar events.</p>
+
+      <h2>Permission justifications</h2>
+      <table>
+        <thead><tr><th>Permission or access</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>storage</code></td><td>Save orders, items, user edits, settings, and reminder state locally.</td></tr>
+          <tr><td><code>alarms</code></td><td>Schedule return reminders and periodically check scheduler state.</td></tr>
+          <tr><td><code>notifications</code></td><td>Display user-enabled return deadline reminders.</td></tr>
+          <tr><td><code>activeTab</code></td><td>Check the current tab after the user opens the extension and starts a scan.</td></tr>
+          <tr><td>Amazon.com order-page host access</td><td>Run the content script on supported order pages and read the page DOM only when the user requests a scan.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Privacy Policy</h2>
+      <p>Read the <a href="./privacy-policy.html">full Privacy Policy</a> for additional details. Chrome Web Store data-use selections and certifications should match the extension's shipped behavior and this disclosure.</p>
+      <footer><a href="./">Post-Purchase Guardian privacy home</a>. Post-Purchase Guardian is independent and is not affiliated with or endorsed by Amazon or Google.</footer>
+    </main>
+  </body>
+</html>
